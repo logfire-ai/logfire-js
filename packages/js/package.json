@@ -1,0 +1,48 @@
+{
+  "name": "@logfire/js",
+  "version": "0.0.1",
+  "description": "Logfire.com Node.js + browser logging",
+  "keywords": [
+    "Logfire",
+    "logging",
+    "logger",
+    "browser",
+    "node"
+  ],
+  "author": "Logfire <support@logfire.sh>",
+  "homepage": "https://github.com/logfire/logfire-js/tree/master/packages/js#readme",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es6/index.js",
+  "types": "dist/es6/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logfire/logfire-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:cjs": "tsc",
+    "build:es6": "tsc -p tsconfig.es6.json",
+    "build": "run-p build:*",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/logfire/logfire-js/issues"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@logfire/node": "^0.0.1"
+  },
+  "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"
+}
