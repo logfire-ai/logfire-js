@@ -1,6 +1,6 @@
 {
-  "name": "@logfire/core",
-  "version": "0.0.1",
+  "name": "@logfire-sh/core",
+  "version": "0.0.9",
   "description": "Logfire.sh - logging core",
   "keywords": [
     "Logfire",
@@ -8,7 +8,7 @@
     "logging"
   ],
   "author": "Logfire <support@logfire.sh>",
-  "homepage": "https://github.sh/logfire/logfire-js/tree/master/packages/core#readme",
+  "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/core#readme",
   "license": "ISC",
   "main": "dist/cjs/index.js",
   "module": "dist/es6/index.js",
@@ -20,7 +20,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.sh/logfire/logfire-js.git"
+    "url": "git+https://github.com/logfire-sh/logfire-js.git"
   },
   "publishConfig": {
     "access": "public"
@@ -33,7 +33,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.sh/logfire/logfire-js/issues"
+    "url": "https://github.com/logfire-sh/logfire-js/issues"
   },
   "devDependencies": {
     "@types/node": "^14.0.4",
@@ -41,8 +41,8 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@logfire/tools": "^0.0.1",
-    "@logfire/types": "^0.0.1",
+    "@logfire-sh/tools": "^0.0.9",
+    "@logfire-sh/types": "^0.0.9",
     "@types/jest": "^29.5.0",
     "@types/yargs": "^17.0.23"
   },

@@ -1,8 +1,8 @@
-import nock from "nock";
-import fetch from "cross-fetch";
-import { ILogfireLog, LogLevel } from "@logfire/types";
-import makeBatch from "./batch";
-import makeThrottle from "./throttle";
+import nock from 'nock';
+import fetch from 'cross-fetch';
+import { ILogfireLog, LogLevel } from '@logfire-sh/types';
+import makeBatch from './batch';
+import makeThrottle from './throttle';
 
 /**
  * Create a log with a random string / current date
@@ -11,7 +11,7 @@ function getRandomLog(): ILogfireLog {
   return {
     dt: new Date(),
     level: LogLevel.Info,
-    message: String(Math.random())
+    message: String(Math.random()),
   };
 }
 
@@ -34,11 +34,11 @@ function calcEndTime(start: [number, number]): number {
   return (end[0] * 1e9 + end[1]) / 1e6;
 }
 
-describe("batch tests", () => {
-  it("should not fire timeout while a send was happening.", async done => {
-    nock("http://example.com")
-      .get("/")
-      .reply(200, new Promise(res => setTimeout(() => res(200), 1003)));
+describe('batch tests', () => {
+  it('should not fire timeout while a send was happening.', async (done) => {
+    nock('http://example.com')
+      .get('/')
+      .reply(200, new Promise((res) => setTimeout(() => res(200), 1003)));
 
     const called = jest.fn();
     const size = 5;
@@ -48,13 +48,13 @@ describe("batch tests", () => {
     const logger = batcher.initPusher(async (batch: ILogfireLog[]) => {
       called();
       try {
-        await fetch("http://example.com");
+        await fetch('http://example.com');
       } catch (e) {
         throw e;
       }
     });
 
-    await Promise.all(logNumberTimes(logger, 5)).catch(e => {
+    await Promise.all(logNumberTimes(logger, 5)).catch((e) => {
       throw e;
     });
     expect(called).toHaveBeenCalledTimes(1);
@@ -62,7 +62,7 @@ describe("batch tests", () => {
     done();
   });
 
-  it("should play nicely with `throttle`", async () => {
+  it('should play nicely with `throttle`', async () => {
     // Fixtures
     const maxThrottle = 2;
     const throttleResolveAfter = 1000; // ms
@@ -73,8 +73,8 @@ describe("batch tests", () => {
     const throttle = makeThrottle(maxThrottle);
 
     // Resolve the throttler after 1 second
-    const throttler = throttle(async logs => {
-      return new Promise(resolve => {
+    const throttler = throttle(async (logs) => {
+      return new Promise((resolve) => {
         setTimeout(() => resolve(logs), throttleResolveAfter);
       });
     });
@@ -112,10 +112,10 @@ describe("batch tests", () => {
     expect(end).toBeGreaterThanOrEqual(expectedTime);
   });
 
-  it("should send after flush (with long timeout)", async done => {
-    nock("http://example.com")
-        .get("/")
-        .reply(200, new Promise(res => setTimeout(() => res(200), 1003)));
+  it('should send after flush (with long timeout)', async (done) => {
+    nock('http://example.com')
+      .get('/')
+      .reply(200, new Promise((res) => setTimeout(() => res(200), 1003)));
 
     const called = jest.fn();
     const size = 50;
@@ -125,16 +125,16 @@ describe("batch tests", () => {
     const logger = batcher.initPusher(async (batch: ILogfireLog[]) => {
       called();
       try {
-        await fetch("http://example.com");
+        await fetch('http://example.com');
       } catch (e) {
         throw e;
       }
     });
 
-    logNumberTimes(logger, 5)
+    logNumberTimes(logger, 5);
     expect(called).toHaveBeenCalledTimes(0);
     try {
-      await batcher.flush()
+      await batcher.flush();
     } catch (e) {
       throw e;
     }

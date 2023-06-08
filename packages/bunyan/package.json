@@ -1,0 +1,57 @@
+{
+  "name": "@logfire-sh/bunyan",
+  "version": "0.0.9",
+  "description": "Logfire.sh - Bunyan writable stream",
+  "keywords": [
+    "Logfire",
+    "logger",
+    "logging",
+    "node",
+    "winston"
+  ],
+  "author": "Logfire <support@logfire.sh>",
+  "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/bunyan#readme",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es6/index.js",
+  "types": "dist/es6/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logfire-sh/logfire-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:cjs": "tsc",
+    "build:es6": "tsc -p tsconfig.es6.json",
+    "build": "run-p build:*",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/logfire-sh/logfire-js/issues"
+  },
+  "devDependencies": {
+    "@logfire-sh/node": "^0.0.9",
+    "@types/babel__core": "7.0.4",
+    "@types/babel__traverse": "7.0.4",
+    "@types/bunyan": "^1.8.6",
+    "bunyan": "^1.8.12",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "@logfire-sh/node": "^0.2.0",
+    "bunyan": ">=1.8.12"
+  },
+  "dependencies": {
+    "@logfire-sh/types": "^0.0.9"
+  },
+  "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"
+}

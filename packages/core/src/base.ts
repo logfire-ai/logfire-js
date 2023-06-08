@@ -6,8 +6,8 @@ import {
   LogLevel,
   Middleware,
   Sync,
-} from '@logfire/types';
-import { makeBatch, makeThrottle } from '@logfire/tools';
+} from '@logfire-sh/types';
+import { makeBatch, makeThrottle } from '@logfire-sh/tools';
 
 // Types
 type Message = string | Error;
@@ -15,7 +15,7 @@ type Message = string | Error;
 // Set default options for Logfire
 const defaultOptions: ILogfireOptions = {
   // Default sync endpoint (protocol + domain)
-  endpoint: 'https://apibeta2.logfire.sh/logfire.sh',
+  endpoint: 'https://in.logfire.sh:443',
 
   // Maximum number of logs to sync in a single request to Logfire.sh
   batchSize: 1000,

@@ -1,15 +1,15 @@
-# [logfire](https://logfire.sh) JavaScript client by [Better Stack](https://logfire.sh) - Logging core library
+# [logfire](https://logfire.sh) JavaScript client(https://logfire.sh) - Logging core library
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](LICENSE.md)
 
 **Looking for a logging solution?**  
-Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](https://logfire.shdocs/logs/javascript/).
+Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](DOC URL).
 
-## `@logfire/core`
+## `@logfire-sh/core`
 
 This is an NPM package that provides core logging functionality.
 
-It's used by the [Node](https://github.com/logfire/logfire-js/tree/master/packages/node) and [browser](https://github.com/logfire/logfire-js/tree/master/packages/browser) logging packages.
+It's used by the [Node](https://github.com/logfire-sh/logfire-js/tree/master/packages/node) and [browser](https://github.com/logfire-sh/logfire-js/tree/master/packages/browser) logging packages.
 
 You typically wouldn't require this package directly, unless you're building a custom logger.
 
@@ -20,8 +20,8 @@ The [Base](src/base.ts) class provides core features that are extended by logger
 For example - you could create a custom logger that implements its own sync method, for getting data over to [logfire.sh](https://logfire.sh)
 
 ```typescript
-import { Base } from '@logfire/core';
-import { IlogfireOptions, IlogfireLog } from '@logfire/types';
+import { Base } from '@logfire-sh/core';
+import { IlogfireOptions, IlogfireLog } from '@logfire-sh/types';
 
 class CustomLogger extends Base {
   // Constructor must take a logfire.sh source token, and (optional) options
@@ -89,7 +89,7 @@ This is useful for augmenting the log prior to syncing with logfire, or even pus
 Here's what a middleware function looks like:
 
 ```typescript
-import { IlogfireLog } from '@logfire/types';
+import { IlogfireLog } from '@logfire-sh/types';
 
 // In this example function, we'll add custom 'context' meta to the log
 // representing the currently logged in user.

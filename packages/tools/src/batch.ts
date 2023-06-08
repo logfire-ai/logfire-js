@@ -1,4 +1,4 @@
-import { ILogfireLog } from "@logfire/types";
+import { ILogfireLog } from '@logfire-sh/types';
 
 // Types
 
@@ -48,10 +48,10 @@ export default function makeBatch(
     buffer = [];
 
     try {
-      await cb(currentBuffer.map(d => d.log));
-      currentBuffer.forEach(d => d.resolve(d.log));
+      await cb(currentBuffer.map((d) => d.log));
+      currentBuffer.forEach((d) => d.resolve(d.log));
     } catch (e) {
-      currentBuffer.map(d => d.reject(e));
+      currentBuffer.map((d) => d.reject(e));
     }
   }
 
@@ -60,7 +60,7 @@ export default function makeBatch(
    */
   async function setupTimeout() {
     if (!timeout) {
-      timeout = setTimeout(async function () {
+      timeout = setTimeout(async function() {
         await flush();
       }, flushTimeout);
     }
@@ -71,16 +71,16 @@ export default function makeBatch(
    * @param fn - Any function to process list
    */
   return {
-    initPusher: function (fn: Function) {
+    initPusher: function(fn: Function) {
       cb = fn;
 
       /*
        * Pushes each log into list
        * @param log: ILogfireLog - Any object to push into list
        */
-      return async function (log: ILogfireLog): Promise<ILogfireLog> {
+      return async function(log: ILogfireLog): Promise<ILogfireLog> {
         return new Promise<ILogfireLog>(async (resolve, reject) => {
-          buffer.push({log, resolve, reject});
+          buffer.push({ log, resolve, reject });
 
           if (buffer.length >= size) {
             await flush();
@@ -92,6 +92,6 @@ export default function makeBatch(
         });
       };
     },
-    flush
+    flush,
   };
 }

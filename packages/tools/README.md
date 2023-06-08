@@ -1,15 +1,13 @@
-# [logfire](https://logfire.sh) JavaScript client by [Better Stack](https://logfire.sh) - Helper tools
+# [logfire](https://logfire.sh) JavaScript client(https://logfire.sh) - Helper tools
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](LICENSE.md)
 
 **Looking for a logging solution?**  
-Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](https://logfire.shdocs/logs/javascript/).
+Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](DOC URL).
 
-## `@logfire/tools`
+## `@logfire-sh/tools`
 
-This library provides helper tools used by the [JavaScript logger](https://github.com/logfire/logfire-js).
-
-## Tools
+This library provides helper tools used by the [JavaScript logger](https://github.com/logfire-sh/logfire-js).
 
 ### `Queue<T>`
 
@@ -20,7 +18,7 @@ Used to store `.log()` Promises that are being batched/throttled.
 **Usage example**
 
 ```typescript
-import { Queue } from '@logfire/tools';
+import { Queue } from '@logfire-sh/tools';
 
 // Interface representing a person
 interface IPerson {
@@ -54,8 +52,8 @@ throttle(fn: T): (...args: InferArgs<T>[]) => Promise<InferArgs<T>>
 #### Usage example
 
 ```typescript
-import logfire from '@logfire/logger';
-import { makeThrottle } from '@logfire/tools';
+import logfire from '@logfire-sh/logger';
+import { makeThrottle } from '@logfire-sh/tools';
 
 // Create a new logfire instance
 const logfire = new logfire('sourceToken');
@@ -87,9 +85,9 @@ void (async () => {
 
 Creates a higher-order batch function aggregates logfire logs and resolves when either `size` # of logs have been collected, or when `flushTimeout` (in ms) has elapsed -- whichever occurs first.
 
-This is used alongside the throttler to provide an array of [`IlogfireLog`](https://github.com/logfire/logfire-js/tree/master/packages/types#ilogfirelog) to the function set in the `.setSync()` method, to be synced with [logfire.sh](https://logfire.sh)
+This is used alongside the throttler to provide an array of [`IlogfireLog`](https://github.com/logfire-sh/logfire-js/tree/master/packages/types#ilogfirelog) to the function set in the `.setSync()` method, to be synced with [logfire.sh](https://logfire.sh)
 
-Used internally by the [`@logfire/core Base class`](https://github.com/logfire/logfire-js/blob/master/packages/core/src/base.ts) to implicitly batch logs:
+Used internally by the [`@logfire-sh/core Base class`](https://github.com/logfire-sh/logfire-js/blob/master/packages/core/src/base.ts) to implicitly batch logs:
 
 ```typescript
 // Create a throttler, for sync operations

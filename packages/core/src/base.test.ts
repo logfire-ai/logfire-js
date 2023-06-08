@@ -1,5 +1,5 @@
 import Base from './base';
-import { ILogfireLog, LogLevel } from '@logfire/types';
+import { ILogfireLog, LogLevel } from '@logfire-sh/types';
 
 describe('base class tests', () => {
   it('should initialize with source token', () => {

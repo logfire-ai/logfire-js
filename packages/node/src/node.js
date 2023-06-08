@@ -5,8 +5,8 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var stream_1 = require("stream");
 // import Msgpack from "msgpack5";
-var types_1 = require("@logfire/types");
-var core_1 = require("@logfire/core");
+var types_1 = require("@logfire-sh/types");
+var core_1 = require("@logfire-sh/core");
 // Namespace the msgpack library
 // const msgpack = Msgpack();
 var Node = (function (_super) {

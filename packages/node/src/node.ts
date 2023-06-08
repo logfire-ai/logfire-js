@@ -1,12 +1,19 @@
-import {Duplex, Writable} from "stream";
+import { Duplex, Writable } from 'stream';
 
-import fetch from "cross-fetch";
-import {encode} from "@msgpack/msgpack";
+import fetch from 'cross-fetch';
+import { encode } from '@msgpack/msgpack';
 
-import {Context, ILogLevel, ILogfireLog, ILogfireOptions, LogLevel, StackContextHint} from "@logfire/types";
-import {Base} from "@logfire/core";
+import {
+  Context,
+  ILogLevel,
+  ILogfireLog,
+  ILogfireOptions,
+  LogLevel,
+  StackContextHint,
+} from '@logfire-sh/types';
+import { Base } from '@logfire-sh/core';
 
-import {getStackContext} from "./context";
+import { getStackContext } from './context';
 
 export class Node extends Base {
   /**
@@ -15,26 +22,20 @@ export class Node extends Base {
    */
   private _writeStream?: Writable | Duplex;
 
-  public constructor(
-    sourceToken: string,
-    options?: Partial<ILogfireOptions>
-  ) {
+  public constructor(sourceToken: string, options?: Partial<ILogfireOptions>) {
     super(sourceToken, options);
 
     // Sync function
     const sync = async (logs: ILogfireLog[]): Promise<ILogfireLog[]> => {
-      const res = await fetch(
-        this._options.endpoint,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/msgpack",
-            Authorization: `Bearer ${this._sourceToken}`,
-            "User-Agent": "logfire-js(node)"
-          },
-          body: this.encodeAsMsgpack(logs)
-        }
-      );
+      const res = await fetch(this._options.endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/msgpack',
+          Authorization: `Bearer ${this._sourceToken}`,
+          'User-Agent': 'logfire-js(node)',
+        },
+        body: this.encodeAsMsgpack(logs),
+      });
 
       if (res.ok) {
         return logs;
@@ -67,7 +68,7 @@ export class Node extends Base {
 
     // Push the processed log to the stream, for piping
     if (this._writeStream) {
-      this._writeStream.write(JSON.stringify(processedLog) + "\n");
+      this._writeStream.write(JSON.stringify(processedLog) + '\n');
     }
 
     // Return the transformed log
@@ -86,14 +87,30 @@ export class Node extends Base {
 
   private encodeAsMsgpack(logs: ILogfireLog[]): Buffer {
     const maxDepth = this._options.contextObjectMaxDepth;
-    const logsWithISODateFormat = logs.map((log) => ({ ...this.sanitizeForEncoding(log, maxDepth), dt: log.dt.toISOString() }));
+    const logsWithISODateFormat = logs.map((log) => ({
+      ...this.sanitizeForEncoding(log, maxDepth),
+      dt: log.dt.toISOString(),
+    }));
     const encoded = encode(logsWithISODateFormat);
-    const buffer = Buffer.from(encoded.buffer, encoded.byteOffset, encoded.byteLength)
+    const buffer = Buffer.from(
+      encoded.buffer,
+      encoded.byteOffset,
+      encoded.byteLength
+    );
     return buffer;
   }
 
-  private sanitizeForEncoding(value: any, maxDepth: number, visitedObjects: WeakSet<any> = new WeakSet()): any {
-    if (value === null || typeof value === "boolean" || typeof value === "number" || typeof value === "string") {
+  private sanitizeForEncoding(
+    value: any,
+    maxDepth: number,
+    visitedObjects: WeakSet<any> = new WeakSet()
+  ): any {
+    if (
+      value === null ||
+      typeof value === 'boolean' ||
+      typeof value === 'number' ||
+      typeof value === 'string'
+    ) {
       return value;
     } else if (value instanceof Date) {
       // Date instances can be invalid & toISOString() will fail
@@ -102,34 +119,47 @@ export class Node extends Base {
       }
 
       return value.toISOString();
-    } else if ((typeof value === "object" || Array.isArray(value)) && (maxDepth < 1 || visitedObjects.has(value))) {
+    } else if (
+      (typeof value === 'object' || Array.isArray(value)) &&
+      (maxDepth < 1 || visitedObjects.has(value))
+    ) {
       if (visitedObjects.has(value)) {
         if (this._options.contextObjectCircularRefWarn) {
-          console.warn(`[Logfire] Found a circular reference when serializing logs. Please do not use circular references in your logs.`);
+          console.warn(
+            `[Logfire] Found a circular reference when serializing logs. Please do not use circular references in your logs.`
+          );
         }
-        return '<omitted circular reference>'
+        return '<omitted circular reference>';
       }
       if (this._options.contextObjectMaxDepthWarn) {
-        console.warn(`[Logfire] Max depth of ${this._options.contextObjectMaxDepth} reached when serializing logs. Please do not use excessive object depth in your logs.`);
+        console.warn(
+          `[Logfire] Max depth of ${this._options.contextObjectMaxDepth} reached when serializing logs. Please do not use excessive object depth in your logs.`
+        );
       }
-      return `<omitted context beyond configured max depth: ${this._options.contextObjectMaxDepth}>`
+      return `<omitted context beyond configured max depth: ${this._options.contextObjectMaxDepth}>`;
     } else if (Array.isArray(value)) {
       visitedObjects.add(value);
-      const sanitizedArray = value.map((item) => this.sanitizeForEncoding(item, maxDepth-1, visitedObjects));
+      const sanitizedArray = value.map((item) =>
+        this.sanitizeForEncoding(item, maxDepth - 1, visitedObjects)
+      );
       visitedObjects.delete(value);
 
-      return sanitizedArray
-    } else if (typeof value === "object") {
+      return sanitizedArray;
+    } else if (typeof value === 'object') {
       const logClone: { [key: string]: any } = {};
 
       visitedObjects.add(value);
 
-      Object.entries(value).forEach(item => {
+      Object.entries(value).forEach((item) => {
         const key = item[0];
         const value = item[1];
 
-        const result = this.sanitizeForEncoding(value, maxDepth-1, visitedObjects);
-        if (result !== undefined){
+        const result = this.sanitizeForEncoding(
+          value,
+          maxDepth - 1,
+          visitedObjects
+        );
+        if (result !== undefined) {
           logClone[key] = result;
         }
       });
