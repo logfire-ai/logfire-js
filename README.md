@@ -1,14 +1,15 @@
-<!-- # [Logfire](https://logfire.sh) JavaScript client by [Logfire](https://logfire.sh/)
-  
-[![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](https://github.com/---------/blob/master/LICENSE.md)
+# [Logfire](https://logfire.sh) JavaScript client
+
+[![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](https://github.com/logfire-sh/logfire-js/blob/main/LICENSE.md)
 
 ## Documentation
 
 [Getting started ⇗](--URL--)
 
 ## Need help?
-Please let us know at [--URL--](--EMAIL--). We're happy to help!
+
+Please let us know at [--URL--](support@logfire.sh). We're happy to help!
 
 ---
 
-[ISC license](https://github.com/---------/blob/master/LICENSE.md), [contributing guidelines](https://github.com/--------/blob/master/CONTRIBUTING.md). -->
+[ISC license](https://github.com/logfire-sh/logfire-js/blob/main/LICENSE.md)
