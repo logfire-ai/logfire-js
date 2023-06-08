@@ -18,4 +18,3 @@ Please let us know at [support@logfire.sh](EMAIL). We're happy to help!
 ---
 
 [ISC license](https://github.com/logfire-sh/logfire-js/blob/master/LICENSE.md)
-
