@@ -1,8 +1,8 @@
 {
-  "name": "@logfire/logger",
+  "name": "@logfire-sh/logger",
   "license": "ISC",
-  "author": "Logfire <support@logfire.com>",
-  "homepage": "github link",
+  "author": "Logfire <support@logfire.sh>",
+  "homepage": "https://github.com/logfire-sh/logfire-js",
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
