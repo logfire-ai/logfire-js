@@ -1,7 +1,7 @@
-import { ILogfireLog, LogLevel } from "@logfire/types";
-import fetch from "cross-fetch";
-import nock from "nock";
-import makeRetry from "./retry";
+import { ILogfireLog, LogLevel } from '@logfire-sh/types';
+import fetch from 'cross-fetch';
+import nock from 'nock';
+import makeRetry from './retry';
 
 /**
  * Create a log with a random string / current date
@@ -10,18 +10,18 @@ function getRandomLog(): ILogfireLog {
   return {
     dt: new Date(),
     level: LogLevel.Info,
-    message: String(Math.random())
+    message: String(Math.random()),
   };
 }
 
 function makeSync(called: Function) {
   return async function sync(logs: ILogfireLog[]): Promise<ILogfireLog[]> {
     try {
-      const res = await fetch("http://example.com");
+      const res = await fetch('http://example.com');
       if (res.ok) {
         return Promise.resolve(logs);
       }
-      throw new Error("failed!");
+      throw new Error('failed!');
     } catch (e) {
       called();
       throw e;
@@ -29,13 +29,13 @@ function makeSync(called: Function) {
   };
 }
 
-describe("retry tests", () => {
-  it("no failure with correct timing", async done => {
+describe('retry tests', () => {
+  it('no failure with correct timing', async (done) => {
     const called = jest.fn();
     const logs: ILogfireLog[] = [getRandomLog()];
 
-    nock("http://example.com")
-      .get("/")
+    nock('http://example.com')
+      .get('/')
       .reply(200, logs);
 
     const sync = makeSync(called);
@@ -46,14 +46,14 @@ describe("retry tests", () => {
     done();
   });
 
-  it("one failure with correct timing", async done => {
+  it('one failure with correct timing', async (done) => {
     const called = jest.fn();
     const logs: ILogfireLog[] = [getRandomLog()];
 
-    nock("http://example.com")
-      .get("/")
-      .reply(500, "Bad")
-      .get("/")
+    nock('http://example.com')
+      .get('/')
+      .reply(500, 'Bad')
+      .get('/')
       .reply(200, logs);
 
     const sync = makeSync(called);
@@ -64,16 +64,16 @@ describe("retry tests", () => {
     done();
   }, 3500);
 
-  it("two failure with correct timing", async done => {
+  it('two failure with correct timing', async (done) => {
     const called = jest.fn();
     const logs: ILogfireLog[] = [getRandomLog()];
 
-    nock("http://example.com")
-      .get("/")
-      .reply(500, "Bad")
-      .get("/")
-      .reply(500, "Bad")
-      .get("/")
+    nock('http://example.com')
+      .get('/')
+      .reply(500, 'Bad')
+      .get('/')
+      .reply(500, 'Bad')
+      .get('/')
       .reply(200, logs);
 
     const sync = makeSync(called);
@@ -84,18 +84,18 @@ describe("retry tests", () => {
     done();
   }, 7000);
 
-  it("three failure with correct timing", async done => {
+  it('three failure with correct timing', async (done) => {
     const called = jest.fn();
     const logs: ILogfireLog[] = [getRandomLog()];
 
-    nock("http://example.com")
-      .get("/")
-      .reply(500, "Bad")
-      .get("/")
-      .reply(500, "Bad")
-      .get("/")
-      .reply(500, "Bad")
-      .get("/")
+    nock('http://example.com')
+      .get('/')
+      .reply(500, 'Bad')
+      .get('/')
+      .reply(500, 'Bad')
+      .get('/')
+      .reply(500, 'Bad')
+      .get('/')
       .reply(200, logs);
 
     const sync = makeSync(called);

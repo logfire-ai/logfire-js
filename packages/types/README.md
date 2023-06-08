@@ -1,11 +1,11 @@
-# [logfire](https://logfire.sh) JavaScript client by [Better Stack](https://logfire.sh) - TypeScript types
+# [logfire](https://logfire.sh) JavaScript client(https://logfire.sh) - TypeScript types
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](LICENSE.md)
 
 **Looking for a logging solution?**  
-Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](https://logfire.shdocs/logs/javascript/).
+Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](DOC URL).
 
-## `@logfire/types`
+## `@logfire-sh/types`
 
 The logfire JS library packages are written in TypeScript.
 
@@ -19,14 +19,14 @@ You can import a shared type into a TypeScript project by importing directly fro
 
 ```typescript
 // For example, `IlogfireLog`
-import { IlogfireLog } from '@logfire/types';
+import { IlogfireLog } from '@logfire-sh/types';
 ```
 
 ## Types
 
 ### `IlogfireOptions`
 
-Config options for the logfire [Base class](https://github.com/logfire/logfire-js/tree/master/packages/core#the-base-class) for creating a logfire client instance.
+Config options for the logfire [Base class](https://github.com/logfire-sh/logfire-js/tree/master/packages/core#the-base-class) for creating a logfire client instance.
 
 ```typescript
 export interface IlogfireOptions {
@@ -100,7 +100,7 @@ interface IlogfireLog {
 
 ### `Middleware`
 
-A type representing a [Middleware function](https://github.com/logfire/logfire-js/tree/master/packages/core#middleware) passed to `.use()` (or `.remove()`)
+A type representing a [Middleware function](https://github.com/logfire-sh/logfire-js/tree/master/packages/core#middleware) passed to `.use()` (or `.remove()`)
 
 ```typescript
 type Middleware = (log: IlogfireLog) => Promise<IlogfireLog>;

@@ -1,6 +1,6 @@
 {
-  "name": "@logfire/node",
-  "version": "0.0.1",
+  "name": "@logfire-sh/node",
+  "version": "0.0.9",
   "description": "Logfire.sh - Node.js logger",
   "keywords": [
     "Logfire",
@@ -9,7 +9,7 @@
     "Node"
   ],
   "author": "Logfire <support@logfire.sh>",
-  "homepage": "github link",
+  "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/js#readme",
   "license": "ISC",
   "main": "dist/cjs/index.js",
   "module": "dist/es6/index.js",
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+repo.git url"
+    "url": "git+https://github.com/logfire-sh/logfire-js.git"
   },
   "publishConfig": {
     "access": "public"
@@ -46,8 +46,8 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@logfire/types": "^0.0.1",
-    "@logfire/core": "^0.0.1",
+    "@logfire-sh/types": "^0.0.9",
+    "@logfire-sh/core": "^0.0.9",
     "@babel/template": "^7.20.7",
     "@msgpack/msgpack": "^2.5.1",
     "@types/stack-trace": "^0.0.29",

@@ -1,4 +1,4 @@
-import { ILogfireLog } from "@logfire/types";
+import { ILogfireLog } from '@logfire-sh/types';
 
 /**
  * maximum number of tries to push logs to logfire

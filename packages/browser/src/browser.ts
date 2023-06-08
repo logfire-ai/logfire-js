@@ -1,33 +1,27 @@
-import fetch from "cross-fetch";
+import fetch from 'cross-fetch';
 
-import { ILogfireLog, ILogfireOptions } from "@logfire/types";
-import { Base } from "@logfire/core";
+import { ILogfireLog, ILogfireOptions } from '@logfire-sh/types';
+import { Base } from '@logfire-sh/core';
 
 // Awaiting: https://bugs.chromium.org/p/chromium/issues/detail?id=571722
 // import { getUserAgent } from "./helpers";
 
 export class Browser extends Base {
-  public constructor(
-    sourceToken: string,
-    options?: Partial<ILogfireOptions>
-  ) {
+  public constructor(sourceToken: string, options?: Partial<ILogfireOptions>) {
     super(sourceToken, options);
 
     // Sync function
     const sync = async (logs: ILogfireLog[]): Promise<ILogfireLog[]> => {
-      const res = await fetch(
-        this._options.endpoint,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${this._sourceToken}`
-            // Awaiting: https://bugs.chromium.org/p/chromium/issues/detail?id=571722
-            // "User-Agent": getUserAgent()
-          },
-          body: JSON.stringify(logs)
-        }
-      );
+      const res = await fetch(this._options.endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${this._sourceToken}`,
+          // Awaiting: https://bugs.chromium.org/p/chromium/issues/detail?id=571722
+          // "User-Agent": getUserAgent()
+        },
+        body: JSON.stringify(logs),
+      });
 
       if (res.ok) {
         return logs;

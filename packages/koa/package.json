@@ -1,0 +1,59 @@
+{
+  "name": "@logfire-sh/koa",
+  "version": "0.0.9",
+  "description": "Logfire.sh - Koa logger",
+  "keywords": [
+    "Logfire",
+    "logger",
+    "logging",
+    "Node"
+  ],
+  "author": "Logfire <support@logfire.sh>",
+  "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/koa#readme",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es6/index.js",
+  "types": "dist/es6/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/logfire-sh/logfire-js.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:cjs": "tsc",
+    "build:es6": "tsc -p tsconfig.es6.json",
+    "build": "run-p build:*",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/logfire-sh/logfire-js/issues"
+  },
+  "devDependencies": {
+    "@logfire-sh/node": "^0.0.9",
+    "@logfire-sh/types": "^0.0.9",
+    "@types/babel__core": "7.0.4",
+    "@types/babel__traverse": "7.0.4",
+    "@types/koa": "^2.0.49",
+    "@types/koa-router": "^7.0.42",
+    "@types/supertest": "^2.0.8",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "npm-run-all": "^4.1.5",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "@logfire-sh/node": "^0.0.9",
+    "rambda": "^2.14.5"
+  },
+  "peerDependencies": {
+    "koa": ">=2.8.1"
+  },
+  "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"
+}

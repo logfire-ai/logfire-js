@@ -1,6 +1,6 @@
 {
-  "name": "@logfire/tools",
-  "version": "0.0.1",
+  "name": "@logfire-sh/tools",
+  "version": "0.0.9",
   "description": "JavaScript logging tools",
   "main": "dist/cjs/index.js",
   "module": "dist/es6/index.js",
@@ -21,12 +21,12 @@
     "test": "jest"
   },
   "author": "Logfire <support@logfire.sh>",
-  "repository": "https://github.com/logfire/logfire-js/tree/master/packages/tools",
+  "repository": "https://github.com/logfire-sh/logfire-js/tree/master/packages/tools",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/logfire/logfire-js/issues"
+    "url": "https://github.com/logfire-sh/logfire-js/issues"
   },
-  "homepage": "https://github.com/logfire/logfire-js/tree/master/packages/tools#readme",
+  "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/tools#readme",
   "devDependencies": {
     "@types/babel__core": "7.0.4",
     "@types/babel__traverse": "7.0.4",
@@ -43,7 +43,7 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@logfire/types": "^0.0.1"
+    "@logfire-sh/types": "^0.0.9"
   },
   "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"
 }
