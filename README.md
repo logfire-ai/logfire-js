@@ -1,4 +1,4 @@
-# [Logfire](https://logfire.sh) JavaScript client
+# [Logfire](https://logfire.ai) JavaScript client
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](https://github.com/logfire-sh/logfire-js/blob/main/LICENSE.md)
 
@@ -8,7 +8,7 @@
 
 ## Need help?
 
-Please let us know at [--URL--](support@logfire.sh). We're happy to help!
+Please let us know at [--URL--](support@logfire.ai). We're happy to help!
 
 ---
 
