@@ -1,7 +1,7 @@
 {
   "name": "@logfire-sh/logger",
   "license": "ISC",
-  "author": "Logfire <support@logfire.sh>",
+  "author": "Logfire <support@logfire.ai>",
   "homepage": "https://github.com/logfire-sh/logfire-js",
   "private": true,
   "scripts": {
