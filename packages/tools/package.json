@@ -1,6 +1,6 @@
 {
   "name": "@logfire-sh/tools",
-  "version": "0.0.9",
+  "version": "1.0.1",
   "description": "JavaScript logging tools",
   "main": "dist/cjs/index.js",
   "module": "dist/es6/index.js",
@@ -20,7 +20,7 @@
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
-  "author": "Logfire <support@logfire.sh>",
+  "author": "Logfire <support@logfire.ai>",
   "repository": "https://github.com/logfire-sh/logfire-js/tree/master/packages/tools",
   "license": "ISC",
   "bugs": {
@@ -43,7 +43,7 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@logfire-sh/types": "^0.0.9"
+    "@logfire-sh/types": "latest"
   },
   "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"
 }

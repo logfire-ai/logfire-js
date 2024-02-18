@@ -1,9 +1,9 @@
-# [logfire](https://logfire.sh) JavaScript client(https://logfire.sh) - Helper tools
+# [logfire](https://logfire.ai) JavaScript client(https://logfire.ai) - Helper tools
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](LICENSE.md)
 
 **Looking for a logging solution?**  
-Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](DOC URL).
+Check out [logfire](https://logfire.ai) and [logfire clients for JavaScript and Node.js](DOC URL).
 
 ## `@logfire-sh/tools`
 
@@ -85,7 +85,7 @@ void (async () => {
 
 Creates a higher-order batch function aggregates logfire logs and resolves when either `size` # of logs have been collected, or when `flushTimeout` (in ms) has elapsed -- whichever occurs first.
 
-This is used alongside the throttler to provide an array of [`IlogfireLog`](https://github.com/logfire-sh/logfire-js/tree/master/packages/types#ilogfirelog) to the function set in the `.setSync()` method, to be synced with [logfire.sh](https://logfire.sh)
+This is used alongside the throttler to provide an array of [`IlogfireLog`](https://github.com/logfire-sh/logfire-js/tree/master/packages/types#ilogfirelog) to the function set in the `.setSync()` method, to be synced with [logfire.ai](https://logfire.ai)
 
 Used internally by the [`@logfire-sh/core Base class`](https://github.com/logfire-sh/logfire-js/blob/master/packages/core/src/base.ts) to implicitly batch logs:
 

@@ -1,11 +1,11 @@
-# [Logfire](https://logfire.sh) JavaScript Bunyan stream.
+# [Logfire](https://logfire.ai) JavaScript Bunyan stream.
 
-[![Logfire dashboard](https://github.com/logfire-sh/logfire-js/assets/92453897/b4a53cf2-822f-4884-8087-981112ed79d0)](https://logfire.sh)
+[![Logfire dashboard](https://github.com/logfire-sh/logfire-js/assets/92453897/b4a53cf2-822f-4884-8087-981112ed79d0)](https://logfire.ai)
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](https://github.com/logfire-sh/logfire-js/blob/master/LICENSE.md)
 [![npm @logfire-sh/bunyan](https://img.shields.io/npm/v/@logfire-sh/bunyan?color=success&label=npm%20%40logfire-sh%2Fbunyan)](https://www.npmjs.com/package/@logfire-sh/bunyan)
 
-Experience SQL-compatible structured log management. [Learn more ⇗](https://logfire.sh/)
+Experience SQL-compatible structured log management. [Learn more ⇗](https://logfire.ai/)
 
 ## Documentation
 
@@ -13,7 +13,7 @@ Experience SQL-compatible structured log management. [Learn more ⇗](https://lo
 
 ## Need help?
 
-Please let us know at [support@logfire.sh](mailto:support@logfire.sh). We're happy to help!
+Please let us know at [support@logfire.ai](mailto:support@logfire.ai). We're happy to help!
 
 ---
 

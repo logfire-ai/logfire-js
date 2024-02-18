@@ -1,19 +1,19 @@
-# [Logfire](https://logfire.sh) JavaScript Koa client
+# [Logfire](https://logfire.ai) JavaScript Koa client
 
-[![Logfire dashboard](https://github.com/logfire-sh/logfire-js/assets/92453897/b4a53cf2-822f-4884-8087-981112ed79d0)](https://logfire.sh)
+[![Logfire dashboard](https://github.com/logfire-sh/logfire-js/assets/92453897/b4a53cf2-822f-4884-8087-981112ed79d0)](https://logfire.ai)
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](https://github.com/logfire-sh/logfire-js/blob/master/LICENSE.md)
 [![npm @logfire-sh/koa](https://img.shields.io/npm/v/@logfire-sh/koa?color=success&label=npm%20%40logfire-sh%2Fkoa)](https://www.npmjs.com/package/@logfire-sh/koa)
 
-Experience SQL-compatible structured log management. [Learn more ⇗](https://logfire.sh/)
+Experience SQL-compatible structured log management. [Learn more ⇗](https://logfire.ai/)
 
 ## Documentation
 
-[Getting started ⇗](https://logfire.sh/docs/logs/javascript/koa)
+[Getting started ⇗](https://logfire.ai/docs/logs/javascript/koa)
 
 ## Need help?
 
-Please let us know at [support@logfire.sh](mailto:support@logfire.sh). We're happy to help!
+Please let us know at [support@logfire.ai](mailto:support@logfire.ai). We're happy to help!
 
 ---
 

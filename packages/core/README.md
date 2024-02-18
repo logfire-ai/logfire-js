@@ -1,9 +1,9 @@
-# [logfire](https://logfire.sh) JavaScript client(https://logfire.sh) - Logging core library
+# [logfire](https://logfire.ai) JavaScript client(https://logfire.ai) - Logging core library
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](LICENSE.md)
 
 **Looking for a logging solution?**  
-Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](DOC URL).
+Check out [logfire](https://logfire.ai) and [logfire clients for JavaScript and Node.js](DOC URL).
 
 ## `@logfire-sh/core`
 
@@ -17,14 +17,14 @@ You typically wouldn't require this package directly, unless you're building a c
 
 The [Base](src/base.ts) class provides core features that are extended by loggers.
 
-For example - you could create a custom logger that implements its own sync method, for getting data over to [logfire.sh](https://logfire.sh)
+For example - you could create a custom logger that implements its own sync method, for getting data over to [logfire.ai](https://logfire.ai)
 
 ```typescript
 import { Base } from '@logfire-sh/core';
 import { IlogfireOptions, IlogfireLog } from '@logfire-sh/types';
 
 class CustomLogger extends Base {
-  // Constructor must take a logfire.sh source token, and (optional) options
+  // Constructor must take a logfire.ai source token, and (optional) options
   public constructor(sourceToken: string, options?: Partial<IlogfireOptions>) {
     // Make sure you pass the source token to the parent constructor!
     super(sourceToken, options);
@@ -71,10 +71,10 @@ There are four levels of logging, each corresponding to a function:
 
 By default, `.log()` logs at the 'info' level. You can use the above explicit log levels instead by calling the relevant function with your log message.
 
-All log levels return a Promise that will resolve once the log has been synced with [logfire.sh](https://logfire.sh):
+All log levels return a Promise that will resolve once the log has been synced with [logfire.ai](https://logfire.ai):
 
 ```typescript
-// Will resolve when synced with logfire.sh (or reject if there's an error)
+// Will resolve when synced with logfire.ai (or reject if there's an error)
 logfire.log('some log message').then((log) => {
   // `log` is the transformed log, after going through middleware
 });
@@ -116,7 +116,7 @@ logfire.use(addCurrentUser);
 
 You can add any number of pipeline functions to your logger instance, and they'll run in order.
 
-Middleware functions run _before_ the final sync to logfire.sh. Pipeline functions should return a `Promise<IlogfireLog>`, making it possible to augment logs with asynchronous data from external sources.
+Middleware functions run _before_ the final sync to logfire.ai. Pipeline functions should return a `Promise<IlogfireLog>`, making it possible to augment logs with asynchronous data from external sources.
 
 **Note: If an exception is thrown anywhere in the pipeline chain, the log _won't_ be synced. Wrap an async `try/catch` block around your call to `.log|info|debug|warn|error()` or tack on a `.catch()` to ensure your errors are handled.**
 

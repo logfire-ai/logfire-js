@@ -4,12 +4,12 @@
 
 export interface ILogfireOptions {
   /**
-   * Endpoint URL for syncing logs with Logfire.sh
+   * Endpoint URL for syncing logs with logfire.ai
    */
   endpoint: string;
 
   /**
-   * Maximum number of logs to sync in a single request to Logfire.sh
+   * Maximum number of logs to sync in a single request to logfire.ai
    */
   batchSize: number;
 

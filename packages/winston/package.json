@@ -1,7 +1,7 @@
 {
   "name": "@logfire-sh/winston",
-  "version": "0.0.9",
-  "description": "Logfire.sh - Winston transport",
+  "version": "1.0.1",
+  "description": "logfire.ai - Winston transport",
   "keywords": [
     "Logfire",
     "logger",
@@ -9,7 +9,7 @@
     "node",
     "winston"
   ],
-  "author": "Logfire <support@logfire.sh>",
+  "author": "Logfire <support@logfire.ai>",
   "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/winston#readme",
   "license": "ISC",
   "main": "dist/cjs/index.js",
@@ -46,8 +46,8 @@
     "winston": ">=3.2.1"
   },
   "dependencies": {
-    "@logfire-sh/node": "^0.0.9",
-    "@logfire-sh/types": "^0.0.9",
+    "@logfire-sh/node": "latest",
+    "@logfire-sh/types": "latest",
     "winston-transport": "^4.3.0"
   },
   "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"

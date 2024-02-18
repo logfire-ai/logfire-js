@@ -15,9 +15,9 @@ type Message = string | Error;
 // Set default options for Logfire
 const defaultOptions: ILogfireOptions = {
   // Default sync endpoint (protocol + domain)
-  endpoint: 'https://in.logfire.sh:443',
+  endpoint: 'https://altrova.in.logfire.ai:443',
 
-  // Maximum number of logs to sync in a single request to Logfire.sh
+  // Maximum number of logs to sync in a single request to logfire.ai
   batchSize: 1000,
 
   // Max interval (in milliseconds) before a batch of logs proceeds to syncing
@@ -40,7 +40,7 @@ const defaultOptions: ILogfireOptions = {
 };
 
 /**
- * Logfire core class for logging to the Logfire.sh service
+ * Logfire core class for logging to the logfire.ai service
  */
 class Logfire {
   // Logfire source token
@@ -72,7 +72,7 @@ class Logfire {
   /**
    * Initializes a new Logfire instance
    *
-   * @param sourceToken: string - Private source token for logging to Logfire.sh
+   * @param sourceToken: string - Private source token for logging to logfire.ai
    * @param options?: ILogfireOptions - Optionally specify Logfire options
    */
   public constructor(sourceToken: string, options?: Partial<ILogfireOptions>) {
@@ -81,7 +81,7 @@ class Logfire {
       throw new Error('Logfire source token missing');
     }
 
-    // Store the source token, to use for syncing with Logfire.sh
+    // Store the source token, to use for syncing with logfire.ai
     this._sourceToken = sourceToken;
 
     // Merge default and user options
@@ -134,7 +134,7 @@ class Logfire {
   }
 
   /**
-   * Number of log entries synced with Logfire.sh
+   * Number of log entries synced with logfire.ai
    *
    * @returns number
    */
@@ -143,7 +143,7 @@ class Logfire {
   }
 
   /**
-   * Log an entry, to be synced with Logfire.sh
+   * Log an entry, to be synced with logfire.ai
    *
    * @param message: string - Log message
    * @param level (LogLevel) - Level to log at (debug|info|warn|error)
@@ -230,7 +230,7 @@ class Logfire {
 
   /**
    *
-   * Debug level log, to be synced with Logfire.sh
+   * Debug level log, to be synced with logfire.ai
    *
    * @param message: string - Log message
    * @param context: (Pick<ILogfireLog, "context">) - Context (optional)
@@ -245,7 +245,7 @@ class Logfire {
 
   /**
    *
-   * Info level log, to be synced with Logfire.sh
+   * Info level log, to be synced with logfire.ai
    *
    * @param message: string - Log message
    * @param context: (Pick<ILogfireLog, "context">) - Context (optional)
@@ -260,7 +260,7 @@ class Logfire {
 
   /**
    *
-   * Warning level log, to be synced with Logfire.sh
+   * Warning level log, to be synced with logfire.ai
    *
    * @param message: string - Log message
    * @param context: (Pick<ILogfireLog, "context">) - Context (optional)
@@ -275,7 +275,7 @@ class Logfire {
 
   /**
    *
-   * Warning level log, to be synced with Logfire.sh
+   * Warning level log, to be synced with logfire.ai
    *
    * @param message: string - Log message
    * @param context: (Pick<ILogfireLog, "context">) - Context (optional)
@@ -290,7 +290,7 @@ class Logfire {
 
   /**
    * Sets the sync method - i.e. the final step in the pipeline to get logs
-   * over to Logfire.sh
+   * over to logfire.ai
    *
    * @param fn - Pipeline function to use as sync method
    */

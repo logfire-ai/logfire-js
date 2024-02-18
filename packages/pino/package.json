@@ -1,6 +1,6 @@
 {
   "name": "@logfire-sh/pino",
-  "version": "0.0.9",
+  "version": "1.0.1",
   "description": "Logfire Pino transport",
   "keywords": [
     "Logfire",
@@ -28,16 +28,16 @@
     "access": "public"
   },
   "devDependencies": {
-    "@logfire-sh/node": "^0.0.9",
+    "@logfire-sh/node": "latest",
     "npm-run-all": "^4.1.5",
-    "typescript": "^3.9.7"
+    "typescript": "^5.0.2"
   },
   "peerDependencies": {
     "pino": "^7.0.0 || ^8.0.0"
   },
   "dependencies": {
-    "@logfire-sh/node": "^0.0.9",
-    "@logfire-sh/types": "^0.0.9",
+    "@logfire-sh/node": "latest",
+    "@logfire-sh/types": "latest",
     "pino-abstract-transport": "^1.0.0"
   },
   "scripts": {

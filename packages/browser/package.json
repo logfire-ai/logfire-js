@@ -1,14 +1,14 @@
 {
   "name": "@logfire-sh/browser",
-  "version": "0.0.9",
-  "description": "Logfire.sh browser logging",
+  "version": "1.0.1",
+  "description": "logfire.ai browser logging",
   "keywords": [
     "Logfire",
     "logging",
     "logger",
     "browser"
   ],
-  "author": "Logfire <support@logfire.sh>",
+  "author": "Logfire <support@logfire.ai>",
   "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/browser#readme",
   "license": "ISC",
   "main": "dist/cjs/index.js",
@@ -52,8 +52,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "@logfire-sh/core": "^0.0.9",
-    "@logfire-sh/tools": "^0.0.9",
+    "@logfire-sh/core": "latest",
+    "@logfire-sh/tools": "latest",
     "cross-fetch": "^3.0.4"
   },
   "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"

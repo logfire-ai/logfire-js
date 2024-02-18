@@ -77,24 +77,24 @@
     "@types/yargs" "^17.0.8"
     chalk "^4.0.0"
 
-"@logfire-sh/core@^0.0.9":
+"@logfire-sh/core@latest":
   version "0.0.9"
   resolved "https://registry.npmjs.org/@logfire-sh/core/-/core-0.0.9.tgz"
   integrity sha512-aY1C1zg0mSiccItj2FLbbN0HaEIHXbHu9S63D4zdmaBu2l9lnb9h61yzEwA+Hl81if6ZaNM897tiYbH1HMgXAg==
   dependencies:
-    "@logfire-sh/tools" "^0.0.9"
-    "@logfire-sh/types" "^0.0.9"
+    "@logfire-sh/tools" latest
+    "@logfire-sh/types" latest
     "@types/jest" "^29.5.0"
     "@types/yargs" "^17.0.23"
 
-"@logfire-sh/node@^0.0.9":
+"@logfire-sh/node@latest":
   version "0.0.9"
   resolved "https://registry.npmjs.org/@logfire-sh/node/-/node-0.0.9.tgz"
   integrity sha512-WO+GzL5TrAsRP/IDYX4+hCXCS8X22miJW0S39/hmN0/8RlyujvcIRxPesuElJZt3MhRXVStHCPUmD7o2IDe87g==
   dependencies:
     "@babel/template" "^7.20.7"
-    "@logfire-sh/core" "^0.0.9"
-    "@logfire-sh/types" "^0.0.9"
+    "@logfire-sh/core" latest
+    "@logfire-sh/types" latest
     "@msgpack/msgpack" "^2.5.1"
     "@types/stack-trace" "^0.0.29"
     babel "^6.23.0"
@@ -103,14 +103,14 @@
     mocha "^10.2.0"
     stack-trace "^0.0.10"
 
-"@logfire-sh/tools@^0.0.9":
+"@logfire-sh/tools@latest":
   version "0.0.9"
   resolved "https://registry.npmjs.org/@logfire-sh/tools/-/tools-0.0.9.tgz"
   integrity sha512-aTRrZ8jdXWNGGNMFZ4oJX5kE0yOhS1o83zAWnNHT4H1Of6LNxmd6Dp9o9I7kKQPUAPS3PImrAnES32n3+HPTPA==
   dependencies:
-    "@logfire-sh/types" "^0.0.9"
+    "@logfire-sh/types" latest
 
-"@logfire-sh/types@^0.0.9":
+"@logfire-sh/types@latest":
   version "0.0.9"
   resolved "https://registry.npmjs.org/@logfire-sh/types/-/types-0.0.9.tgz"
   integrity sha512-lle/eUg4TQ4EZqYtW+qbiIXQ3zpkpF06j9jgc3UaA4H+Br0h/brQKiQOo42BYwGV5Kus+/icWKVbNY2HUVWAzg==
@@ -560,11 +560,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@~2.3.2:
-  version "2.3.2"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
-  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
   version "1.1.1"

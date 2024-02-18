@@ -1,14 +1,14 @@
 {
   "name": "@logfire-sh/node",
-  "version": "0.0.9",
-  "description": "Logfire.sh - Node.js logger",
+  "version": "1.0.1",
+  "description": "logfire.ai - Node.js logger",
   "keywords": [
     "Logfire",
     "logger",
     "logging",
     "Node"
   ],
-  "author": "Logfire <support@logfire.sh>",
+  "author": "Logfire <support@logfire.ai>",
   "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/js#readme",
   "license": "ISC",
   "main": "dist/cjs/index.js",
@@ -46,8 +46,8 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@logfire-sh/types": "^0.0.9",
-    "@logfire-sh/core": "^0.0.9",
+    "@logfire-sh/types": "latest",
+    "@logfire-sh/core": "latest",
     "@babel/template": "^7.20.7",
     "@msgpack/msgpack": "^2.5.1",
     "@types/stack-trace": "^0.0.29",

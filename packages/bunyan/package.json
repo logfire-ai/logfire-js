@@ -1,7 +1,7 @@
 {
   "name": "@logfire-sh/bunyan",
-  "version": "0.0.9",
-  "description": "Logfire.sh - Bunyan writable stream",
+  "version": "1.0.1",
+  "description": "logfire.ai - Bunyan writable stream",
   "keywords": [
     "Logfire",
     "logger",
@@ -9,7 +9,7 @@
     "node",
     "winston"
   ],
-  "author": "Logfire <support@logfire.sh>",
+  "author": "Logfire <support@logfire.ai>",
   "homepage": "https://github.com/logfire-sh/logfire-js/tree/master/packages/bunyan#readme",
   "license": "ISC",
   "main": "dist/cjs/index.js",
@@ -38,7 +38,7 @@
     "url": "https://github.com/logfire-sh/logfire-js/issues"
   },
   "devDependencies": {
-    "@logfire-sh/node": "^0.0.9",
+    "@logfire-sh/node": "latest",
     "@types/babel__core": "7.0.4",
     "@types/babel__traverse": "7.0.4",
     "@types/bunyan": "^1.8.6",
@@ -51,7 +51,7 @@
     "bunyan": ">=1.8.12"
   },
   "dependencies": {
-    "@logfire-sh/types": "^0.0.9"
+    "@logfire-sh/types": "latest"
   },
   "gitHead": "0f816cacc21b352576a5707741f9151aa1481041"
 }

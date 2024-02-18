@@ -1,9 +1,9 @@
-# [logfire](https://logfire.sh) JavaScript client(https://logfire.sh) - TypeScript types
+# [logfire](https://logfire.ai) JavaScript client(https://logfire.ai) - TypeScript types
 
 [![ISC License](https://img.shields.io/badge/license-ISC-ff69b4.svg)](LICENSE.md)
 
 **Looking for a logging solution?**  
-Check out [logfire](https://logfire.sh) and [logfire clients for JavaScript and Node.js](DOC URL).
+Check out [logfire](https://logfire.ai) and [logfire clients for JavaScript and Node.js](DOC URL).
 
 ## `@logfire-sh/types`
 
@@ -31,12 +31,12 @@ Config options for the logfire [Base class](https://github.com/logfire-sh/logfir
 ```typescript
 export interface IlogfireOptions {
   /**
-   * Endpoint URL for syncing logs with logfire.sh
+   * Endpoint URL for syncing logs with logfire.ai
    */
   endpoint: string;
 
   /**
-   * Maximum number of logs to sync in a single request to logfire.sh
+   * Maximum number of logs to sync in a single request to logfire.ai
    */
   batchSize: number;
 
@@ -87,7 +87,7 @@ export type Context = { [key: string]: ContextKey | Context };
 
 ### `IlogfireLog`
 
-The log object which is implicitly created by calling `.log()` (or any explicit log level function - e.g. `.info()`), and is passed down the chain for logfire middleware before syncing with [logfire.sh](https://logfire.sh)
+The log object which is implicitly created by calling `.log()` (or any explicit log level function - e.g. `.info()`), and is passed down the chain for logfire middleware before syncing with [logfire.ai](https://logfire.ai)
 
 ```typescript
 interface IlogfireLog {
@@ -108,7 +108,7 @@ type Middleware = (log: IlogfireLog) => Promise<IlogfireLog>;
 
 ### `Sync`
 
-The type of the function passed to `.setSync()`, for syncing a log with [logfire.sh](https://logfire.sh):
+The type of the function passed to `.setSync()`, for syncing a log with [logfire.ai](https://logfire.ai):
 
 Note: Differs from the `Middleware` type because it receives - and resolves to a Promise of - an array of batched `IlogfireLog`.
 
